@@ -3,60 +3,117 @@ package com.iandrobot.example.photos.data;
 /**
  * Created by surajbhattarai on 10/15/15.
  */
+
+
+
 public class Photo {
-    private String mTitle;
-    private String mImageUrl;
-    private String mFarmId;
-    private String mServerId;
-    private String mImageId;
-    private String mSecret;
 
-    private final String IMAGE_URL = "https://farm%s.staticflickr.com/%s/%s_%s_s.jpg";
+    private transient final String IMAGE_URL = "https://farm%s.staticflickr.com/%s/%s_%s_s.jpg";
+    //String.format(IMAGE_URL, farmId, serverId, imageId, secret);
 
-    //https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}_s.jpg"
+    private String isfamily;
+    private String farm;
+    private String id;
+    private String title;
+    private String ispublic;
+    private String owner;
+    private String secret;
+    private String server;
+    private String isfriend;
 
-    public Photo(){}
-
-    public Photo(String title, String farmId, String serverId, String imageId, String secret) {
-        this.mTitle = title;
-        this.mFarmId = farmId;
-        this.mServerId = serverId;
-        this.mImageId = imageId;
-        this.mSecret = secret;
-
-        this.mImageUrl = String.format(IMAGE_URL, farmId, serverId, imageId, secret);
+    public String getIsfamily ()
+    {
+        return isfamily;
     }
 
-    public void setFarmId(String farmId) {
-        this.mFarmId = farmId;
+    public void setIsfamily (String isfamily)
+    {
+        this.isfamily = isfamily;
     }
 
-    public void setServerId(String serverId) {
-        this.mServerId = serverId;
+    public String getFarm ()
+    {
+        return farm;
     }
 
-    public void setImageId(String imageId) {
-        this.mImageId = imageId;
+    public void setFarm (String farm)
+    {
+        this.farm = farm;
     }
 
-    public void setSecret(String secret) {
-        this.mSecret = secret;
+    public String getId ()
+    {
+        return id;
     }
 
-
-    public String getTitle() {
-        return mTitle;
+    public void setId (String id)
+    {
+        this.id = id;
     }
 
-    public void setTitle(String title) {
-        this.mTitle = title;
+    public String getTitle ()
+    {
+        return title;
     }
 
-    public String getImageUrl() {
-        return mImageUrl;
+    public void setTitle (String title)
+    {
+        this.title = title;
     }
 
-    public void setImageUrl(String imageUrl) {
-        this.mImageUrl = imageUrl;
+    public String getIspublic ()
+    {
+        return ispublic;
+    }
+
+    public void setIspublic (String ispublic)
+    {
+        this.ispublic = ispublic;
+    }
+
+    public String getOwner ()
+    {
+        return owner;
+    }
+
+    public void setOwner (String owner)
+    {
+        this.owner = owner;
+    }
+
+    public String getSecret ()
+    {
+        return secret;
+    }
+
+    public void setSecret (String secret)
+    {
+        this.secret = secret;
+    }
+
+    public String getServer ()
+    {
+        return server;
+    }
+
+    public void setServer (String server)
+    {
+        this.server = server;
+    }
+
+    public String getIsfriend ()
+    {
+        return isfriend;
+    }
+
+    public void setIsfriend (String isfriend)
+    {
+        this.isfriend = isfriend;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "ClassPojo [isfamily = "+isfamily+", farm = "+farm+", id = "+id+", title = "+title+", ispublic = "+ispublic+", owner = "+owner+", secret = "+secret+", server = "+server+", isfriend = "+isfriend+"]";
     }
 }
